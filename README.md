@@ -8,7 +8,7 @@
 
 ---
 
-<p>Welcome to my Advance Serverside Languages Repo. The purpose of this repo is to share my knowledge with other developers and a way to track my skills along my web developer journey. </p>
+<p>Welcome to my Advance Serverside Languages Repo. As you will see a folder for Assignments and Activities, once a assignment/activity is done the work will be saved under a branch like so, 'assignments/1.2-first-assignment'. The main purpose of this repo is to share my knowledge gained from Advanced Serverside Languages Online class from Full Sail University and a way to track my skills and progress along my web developer journey. </p>
 
 ## Topics
 
