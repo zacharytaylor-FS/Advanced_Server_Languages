@@ -1,7 +1,25 @@
 let products = [
-    {id:"1","type":"product","brand":"apple","name":"iPhone 14 Pro","price": 999},
-    {id:"2","type":"product","brand":"apple","name":"iPhone 14 Pro Max","price": 1099},
-    {id:"3","type":"product","brand":"apple","name":"iPhone SE","price": 429},
+    {
+        id:"1",
+        "type":"product",
+        "brand":"apple",
+        "name":"iPhone 14 Pro",
+        "price": 999
+    },
+    {
+        id:"2",
+        "type":"product",
+        "brand":"apple",
+        "name":"iPhone 14 Pro Max",
+        "price": 1099
+    },
+    {
+        id:"3",
+        "type":"product",
+        "brand":"apple",
+        "name":"iPhone SE",
+        "price": 429
+    },
 ]
 
 const all = () => {
