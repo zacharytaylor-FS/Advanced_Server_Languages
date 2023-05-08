@@ -1,17 +1,19 @@
 {
-  "name": "asl",
-  "version": "1.0.0",
-  "description": "Advanced Serverside Languages",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Zachary Taylor",
-  "license": "MIT",
-  "dependencies": {
-    "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.22"
-  }
+	"name": "asl",
+	"version": "1.0.0",
+	"description": "Advanced Serverside Languages",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node index.js",
+		"dev": "nodemon index.js"
+	},
+	"author": "Zachary Taylor",
+	"license": "MIT",
+	"dependencies": {
+		"express": "^4.18.2"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.22"
+	}
 }
