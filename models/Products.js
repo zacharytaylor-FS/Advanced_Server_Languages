@@ -9,7 +9,7 @@ const all = () => {
 }
 
 const find = (id) => {
-    const id = Number(req.params.id)
+    // const id = Number(req.params.id)
     return products.find(p => p.id === id)
 }
 
