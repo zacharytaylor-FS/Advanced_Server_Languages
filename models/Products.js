@@ -9,6 +9,7 @@ const all = () => {
 }
 
 const find = (id) => {
+    const id = Number(req.params.id)
     return products.find(p => p.id === id)
 }
 
@@ -18,7 +19,7 @@ const create = (product) => {
 }
 
 const update = (id, product) => {
-    products = product.map((p) => {
+    products = products.map((p) => {
         return (p.id === id) ? product : p
     })
     return products
