@@ -10,7 +10,6 @@ router.get('/new', productCtrl.form)
 router.get('/:id', productCtrl.show)
 
 //* EDIT BY ID
-//* PREPOPULATED
 router.get('/:id/edit', productCtrl.form)
 
 //* CREATE NEW CONTEXT NO ID

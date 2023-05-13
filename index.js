@@ -1,17 +1,18 @@
-'use strict'
 const express = require('express');
-const app = express();
-const bodyParser = require('body-parser')
+const path = require('path');
 const morgan = require('morgan');
-app.use(bodyParser.urlencoded({extended: false}))
-const productRouter = require('./routes/Products')
-require('dotenv').config()
- 
-app.use(morgan('dev'))
 
-app.use('/products', productRouter)
+const app = express();
 
-app.listen(process.env.PORT, function(err) {
-    if (err) console.error(err);
-    console.log(`App Listening on port ${process.env.PORT}`)
+app.set('view engine', 'pug')
+app.set('views', '/templates')
+
+app.get('/', (req, res, next) => {
+    res.render('home', {
+        
+    })
+})
+
+app.listen(8080, () => {
+    app.cre
 })
