@@ -5,14 +5,14 @@ const morgan = require('morgan');
 const app = express();
 
 app.set('view engine', 'pug')
-app.set('views', '/templates')
+app.set('views', './views')
 
 app.get('/', (req, res, next) => {
-    res.render('home', {
+    res.render('index', {
         
     })
 })
 
 app.listen(8080, () => {
-    app.cre
+    console.log('Express server running on port: 8080')
 })
