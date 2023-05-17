@@ -6,18 +6,18 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "node index.js",
-		"dev": "nodemon index.js"
+		"dev": "nodemon -e pug,js index.js"
 	},
 	"author": "Zachary Taylor",
 	"license": "MIT",
 	"dependencies": {
 		"body-parser": "^1.20.2",
-		"express": "^4.18.2"
+		"express": "^4.18.2",
+		"pug": "^3.0.2"
 	},
 	"devDependencies": {
 		"dotenv": "^16.0.3",
 		"morgan": "^1.10.0",
-		"nodemon": "^2.0.22",
-		"pug": "^3.0.2"
+		"nodemon": "^2.0.22"
 	}
 }

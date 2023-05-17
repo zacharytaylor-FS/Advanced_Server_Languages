@@ -3,14 +3,14 @@ const path = require('path');
 const morgan = require('morgan');
 
 const app = express();
+app.use(morgan('dev'))
 
 app.set('view engine', 'pug')
-app.set('views', './views')
+
+app.set('views', __dirname + '/templates')
 
 app.get('/', (req, res, next) => {
-    res.render('index', {
-        
-    })
+    res.render('views/products/index', {})
 })
 
 app.listen(8080, () => {
