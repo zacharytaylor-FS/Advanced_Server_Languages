@@ -1,5 +1,6 @@
-<header>
-    < nav.navbar.navbar-default.navbar-static-top >
+header 
+  h1 Welocme
+    nav.navbar.navbar-default.navbar-static-top 
         .container
             .navbar-header
                 button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
@@ -7,7 +8,9 @@
                     span.icon-bar
                     span.icon-bar
                     span.icon-bar
-                a.navbar-brand(href='/') App Name
+                img(src="/images/pug.svg", alt="alt")    
+                img.navbar-brand(source='/images/pug.svg') App Name
+
             #navbar.navbar-collapse.collapse
                 ul.nav.navbar-nav
                     li(class=(title == 'Home') ? 'active' : null)
@@ -32,4 +35,3 @@
                         li(class=(title == 'Register') ? 'active' : null)
                             a(href='/register') Register
     //- /.nav-collapse
-</header>

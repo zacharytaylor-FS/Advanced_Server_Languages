@@ -3,6 +3,38 @@
 body {
     margin: 0;
     padding: 0;
-    max-height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont;
     background: #05161a;
+    color: white;
+}
+nav {
+    display: flex;
+    align-items: center;
+    height: 64px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li a {
+    display: block;
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-header {
+    flex: 1 0 140px;
+}
+
+.card-picture img {
+    flex: 1 0 140px;
+}
+
+.btn-card {
+    flex: 1 0 200px;
 }

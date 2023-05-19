@@ -1,9 +1,19 @@
-const pug = require('pug');
-
-<nav>
-    <ul>
-        <li><a href='/'></a>Home</li>
-        <li><a href='/'></a>About</li>
-        <li><a href='/'></a>Contacts</li>
-    </ul>
-</nav>
+nav 
+  navbar-default
+  .logo 
+    img(src="/images/pug.svg", alt="alt")    
+    a#logo Company Logo 
+  ul 
+    li 
+      a(href='/') Home
+    li 
+      a(href='/') Products
+    li 
+      a(href='/') Shop
+    li 
+      a Page 1
+    li 
+      a Page 2
+    form(action="" method="method")
+      <input placeholder='Search...'/>
+      button.btn.btn-primary(type='button') /  

@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
+const productsRouter = require('./routes/Products')
 require('dotenv').config()
 
 const app = express();
@@ -10,12 +11,10 @@ app.use(express.urlencoded({extended: false}))
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.set('view engine', 'pug')
-app.set('views', __dirname + '/templates')
+app.set('views', path.join(__dirname + '/templates'))
 
 
-app.get('/', (req, res, next) => {
-    res.render('views/products/index', {})
-})
+app.use('/products', productsRouter)
 
 app.use((req,res, next) => {
     const error = new Error('Not Found')
@@ -23,9 +22,10 @@ app.use((req,res, next) => {
     next(error)
 })
 
-app.use((error, req, res, next) => {
-    res.status(error.status || 500)
-    res.render('views/products/error')
+app.use((err, req, res, next) => {
+    res.status(err.status || 500).render('views/products/error', {
+        err
+    })
 })
 
 app.listen(process.env.PORT, () => {

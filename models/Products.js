@@ -1,25 +1,36 @@
 let products = [
     {
-        id:"1",
-        "type":"product",
-        "brand":"apple",
-        "name":"iPhone 14 Pro",
-        "price": 999
+        id: 1,
+        brand:"Apple",
+        title:"iPhone 14 Pro",
+        is_published:true,
+        price: 999,
+        description: "Brand new 14 Pro"
+
     },
     {
-        id:"2",
-        "type":"product",
-        "brand":"apple",
-        "name":"iPhone 14 Pro Max",
-        "price": 1099
+        id: 2,
+        brand:"Apple",
+        title:"iPhone 14 Pro Max",
+        is_published:true,
+        price: 1099,
+        description: "Brand new 14 Pro Max"
     },
     {
-        id:"3",
-        "type":"product",
-        "brand":"apple",
-        "name":"iPhone SE",
-        "price": 429
+        id: 3,
+        brand:"Apple",
+        title:"iPhone SE",
+        is_published:true,
+        price: 429,
+        description: "Dependable Go-To for Apple users"
     },
+    {
+        id: 4,
+        title: 'Nike Shoe',
+        price: 29.00,
+        is_published: true,
+        description: "Brand new Nike Shoe"
+    }
 ]
 
 const all = () => {
@@ -48,4 +59,4 @@ const remove = (id) => {
     return products
 }
 
-module.exports = {all, find, create, update, remove}
+module.exports = { all, find, create, update, remove}

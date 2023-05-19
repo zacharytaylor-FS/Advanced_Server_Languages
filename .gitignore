@@ -106,7 +106,7 @@ dist
 .tern-port
 
 # DEMO files
-
+/help
 
 # Text Files
 *.txt
