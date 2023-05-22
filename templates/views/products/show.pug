@@ -1,1 +1,9 @@
 extends ../../layouts/base.pug
+
+block content 
+  div 
+    h3= `About ${product.title}` 
+    ul 
+      li= `Product Id: ${product.id}` 
+  div 
+    p= product.description

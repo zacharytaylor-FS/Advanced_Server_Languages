@@ -1,19 +1,37 @@
 nav 
-  navbar-default
-  .logo 
-    img(src="/images/pug.svg", alt="alt")    
-    a#logo Company Logo 
-  ul 
-    li 
-      a(href='/') Home
-    li 
-      a(href='/') Products
-    li 
-      a(href='/') Shop
-    li 
-      a Page 1
-    li 
-      a Page 2
-    form(action="" method="method")
-      <input placeholder='Search...'/>
-      button.btn.btn-primary(type='button') /  
+  .container 
+    .navbar-left 
+      button.btn.btn-primary(type='button', aria-controls='navbar', aria-expanded='false')
+        span Toggle Navigation
+      span
+        img.card-picture-img(src="/images/pug.svg", alt="alt", width=64)
+        a.navbar-brand(href="/") Pug EM 
+    #navbar.navbar-menu 
+      ul.nav.navbar 
+        link(class=(title == 'home') ? 'active' :null)/ 
+        a(href="/") Home
+        link(class=(title == 'index') ? 'active' :null)/
+        a(href="/products") Products 
+        link(class=(title == 'show') ? 'active' :null)/
+        a(href="/products/") Show
+        a(class="icon", href=('javascript:void(0)'), target="_blank", rel="noopener noreferrer")
+          i.fa.fa-bars.icon(aria-hidden='true')  
+  
+  //- navbar-default
+  //- .logo 
+  //-   img(src="/images/pug.svg", alt="alt")    
+  //-   a#logo Company Logo 
+  //- ul 
+  //-   li 
+  //-     a(href='/') Home
+  //-   li 
+  //-     a(href='/') Products
+  //-   li 
+  //-     a(href='/') Shop
+  //-   li 
+  //-     a Page 1
+  //-   li 
+  //-     a Page 2
+  //-   form(action="" method="method")
+  //-     <input placeholder='Search...'/>
+  //-     button.btn.btn-primary(type='button') /  

@@ -12,24 +12,37 @@ const index = (req, res) => {
     }).json(products)
 };
 
+const form = (req, res) => {
+    const id = (typeof req.params.id !== "undefined") ? Number(req.params.id) : false
+    if (req.params.id) {
+        const product = Products.find(id)
+    // res.json(product)
+    res.render('views/products/edit.pug', {product, id})
+} else {
+    res.render('views/products/create.pug')
+
+}
+};
 const show = (req, res) => {
-    const products = Products.find(req.params.id)
-    res.json(products)
+    const productId = Number(req.params.id)
+    let product = Products.find((r) => r.id === productId)
+    res.render('views/products/show.pug', {product})
 };
 const create = (req, res) => {
     const product = Products.create(req.body)
-    res.json(product)
-};
-const form = (req, res) => {
-    res.send('Product.form')
+    // res.json(product)
+    res.redirect('/products/' + product.id)
 };
 const update = (req, res) => {
     const product = Products.update(req.params.id, req.body)
-    res.json(product)
+    // res.json(product)
+    res.redirect('/products/' + req.params.id)
+
 };
 const remove = (req, res) => {
-    const products = Products.remove(req.params.id)
+    const product = Products.remove(req.params.id)
     // res.json(products)
+    res.render('views/products/show.pug')
 };
 
 

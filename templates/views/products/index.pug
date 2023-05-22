@@ -1,23 +1,29 @@
 extends ../../layouts/base.pug
 
 block content
-  h1 About 
-   ul 
-     li: a(href="/") Show
-  div
-  .card-container 
+  main.main 
+    h1 All Products 
+    ul 
+      li: a(href="/products/new") Create
+      li: a(href=`/products/products.id`) Edit
+      li: a(href="/products/") Delete
+  div.card-container 
     each product in products 
      .card 
        .card-header 
           .card-picture 
             .card-picture-overlay &nbsp;
-            img.card-picture-img(src="images/pug.svg", alt="alt" width=180)
+            img.card-picture-img(src="images/pug.svg", alt="alt", width='')  
           h2
             span= product.title
-          p= 'Price: ' + product.price 
+          p= `Price:   ${product.price} `
           |
           p= product.description 
-          button.btn.btn-primary.btn-card(type='button') Button
+          button.btn.btn-primary.btn-card(type='button')
+            a(href=`/products/${product.id}`) Show
+          button.btn.btn-primary.btn-card(type='button')
+            a(href=`/products/${product.id}/delete`) Delete
+
 
 
 

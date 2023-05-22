@@ -1,7 +1,10 @@
 extends ../../layouts/base.pug
 
-block content 
-  h1= `URL `+ err.message
-  h2= `Error Code: `+ err.status
-    p Sorry we have ran into an ERROR
-  p= err.stack
+block content
+  nav.nav.navbar 
+    a(href="/") Back
+  article    
+    h1= `URL `+ err.message
+    h2= `Error Code: `+ err.status
+      p Sorry we have ran into an ERROR
+    p= err.stack

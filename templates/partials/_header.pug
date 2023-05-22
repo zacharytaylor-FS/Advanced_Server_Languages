@@ -1,37 +1,19 @@
-header 
-  h1 Welocme
-    nav.navbar.navbar-default.navbar-static-top 
-        .container
-            .navbar-header
-                button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
-                    span.sr-only Toggle navigation
-                    span.icon-bar
-                    span.icon-bar
-                    span.icon-bar
-                img(src="/images/pug.svg", alt="alt")    
-                img.navbar-brand(source='/images/pug.svg') App Name
-
-            #navbar.navbar-collapse.collapse
-                ul.nav.navbar-nav
-                    li(class=(title == 'Home') ? 'active' : null)
-                        a(href='/') Home
-                    li(class=(title == 'About') ? 'active' : null)
-                        a(href='/about') About
-                ul.nav.navbar-nav.navbar-right
-                    if user
-                        li.dropdown
-                            a.navbar-avatar.dropdown-toggle(href='#', data-toggle='dropdown')
-                                span #{user.name || user.email} &nbsp;
-                                i.caret
-                            ul.dropdown-menu
-                                li
-                                    a(href='/profile') Profile
-                                li.divider(role='separator')
-                                li
-                                    a(href='/logout') Logout
-                    else
-                        li(class=(title == 'Log in') ? 'active' : null)
-                            a(href='/login') Log-in
-                        li(class=(title == 'Register') ? 'active' : null)
-                            a(href='/register') Register
-    //- /.nav-collapse
+header
+  div
+    a.navbar-brand(href="/")
+      img.card-picture-img(src="/images/pug.svg", alt="alt", width=64)
+      span Pug EM
+  nav 
+  .container 
+    .navbar-left 
+      button.btn.btn-primary(type='button', aria-controls='navbar', aria-expanded='false')
+        span Toggle Navigation
+    form(action="#" method="method")
+    label(for="search") 
+    input#form-controls(name="search", type="search", placeholder="Search...", autofocus=true)
+    nav#navbar.navbar-menu  
+      ul.nav.navbar 
+        link(class=(title == 'home') ? 'active' :null)/ 
+        a(href="/") Home
+        link(class=(title == 'index') ? 'active' :null)/
+        a(href="/products") Products 

@@ -39,12 +39,14 @@ const all = () => {
 
 const find = (id) => {
     // const id = Number(req.params.id)
-    return products.find(p => p.id === id)
+    const product = products.find((r) => r.id == id)
+    return product
 }
 
 const create = (product) => {
-    products.push(product)
-    return products
+    const id = Number(products[products.length -1].id) + 1 + ''
+    products.push({id, ...product})
+    return products[products.length - 1]
 }
 
 const update = (id, product) => {
@@ -55,8 +57,8 @@ const update = (id, product) => {
 }
 
 const remove = (id) => {
-    products = products.filter(p => p.id !== id)
+    products = products.filter((p) => p.id !== id)
     return products
 }
 
-module.exports = { all, find, create, update, remove}
+module.exports = { products, all, find, update, create, remove }
