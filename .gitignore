@@ -108,6 +108,6 @@ dist
 # DEMO files
 /help
 
-
+/data/
 # Text Files
 *.txt

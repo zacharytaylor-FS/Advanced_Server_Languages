@@ -1,23 +1,26 @@
 {
-	"name": "asl",
-	"version": "1.0.0",
-	"description": "Advanced Serverside Languages",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "node index.js",
-		"watch": "nodemon -e pug,js,css index.js"
-	},
-	"author": "Zachary Taylor",
-	"license": "MIT",
-	"dependencies": {
-		"body-parser": "^1.20.2",
-		"express": "^4.18.2",
-		"pug": "^3.0.2"
-	},
-	"devDependencies": {
-		"dotenv": "^16.0.3",
-		"morgan": "^1.10.0",
-		"nodemon": "^2.0.22"
-	}
+    "name": "asl",
+    "version": "1.0.0",
+    "description": "Advanced Serverside Languages",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js",
+        "watch": "nodemon -e pug,js,css index.js"
+    },
+    "author": "Zachary Taylor",
+    "license": "MIT",
+    "dependencies": {
+        "body-parser": "^1.20.2",
+        "express": "^4.18.2",
+        "mysql2": "^3.3.1",
+        "pug": "^3.0.2",
+        "sequelize": "^6.31.1"
+    },
+    "devDependencies": {
+        "dotenv": "^16.0.3",
+        "morgan": "^1.10.0",
+        "nodemon": "^2.0.22",
+        "sequelize-cli": "^6.6.0"
+    }
 }
