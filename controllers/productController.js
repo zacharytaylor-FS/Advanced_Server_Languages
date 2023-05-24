@@ -5,11 +5,12 @@
 */
 const { Product } = require('../models')
 
-exports.index = async (req, res) => {
+const index = async (req, res) => {
     const products = await Product.all()
     res.render('views/products/index.pug', {
-        products
-    }).json(products)
+        title: 'Home',
+        products, 
+    })
 };
 
 const form = async (req, res) => {

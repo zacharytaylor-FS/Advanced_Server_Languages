@@ -14,7 +14,7 @@ let products = [
         title:"iPhone 14 Pro Max",
         is_published:true,
         price: 1099,
-        description: "Brand new 14 Pro Max"
+        description: "Brand ew 14 Pro Max"
     },
     {
         id: 3,
