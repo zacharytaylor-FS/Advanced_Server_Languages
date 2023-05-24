@@ -2,20 +2,20 @@
  * * The controller interacts with the model and serves the response and functionality to the view.ssd
  * * ROUTES to call on DB 
  * * require Model
- */
-const Products = require('../models/Products')
+*/
+const { Product } = require('../models')
 
-const index = (req, res) => {
-    const products =  Products.all()
+exports.index = async (req, res) => {
+    const products = await Product.all()
     res.render('views/products/index.pug', {
         products
     }).json(products)
 };
 
-const form = (req, res) => {
+const form = async (req, res) => {
     const id = (typeof req.params.id !== "undefined") ? Number(req.params.id) : false
-    if (req.params.id) {
-        const product = Products.find(id)
+if (req.params.id) {
+    const product = await Product.find(id)
     // res.json(product)
     res.render('views/products/edit.pug', {product, id})
 } else {
@@ -23,26 +23,30 @@ const form = (req, res) => {
 
 }
 };
-const show = (req, res) => {
+
+const show = async (req, res) => {
     const productId = Number(req.params.id)
-    let product = Products.find((r) => r.id === productId)
+    let product = await Product.find((r) => r.id === productId)
     res.render('views/products/show.pug', {product})
 };
-const create = (req, res) => {
-    const product = Products.create(req.body)
+
+const create = async (req, res) => {
+    const product = await Product.create(req.body)
     // res.json(product)
     res.redirect('/products/' + product.id)
 };
-const update = (req, res) => {
-    const product = Products.update(req.params.id, req.body)
+
+
+const update = async (req, res) => {
+    const product = await Product.update(req.params.id, req.body)
     // res.json(product)
     res.redirect('/products/' + req.params.id)
 
 };
-const remove = (req, res) => {
-    const product = Products.remove(req.params.id)
+const remove = async (req, res) => {
+    const product = await Product.remove(req.params.id)
     // res.json(products)
-    res.render('views/products/show.pug')
+    res.redirect('/products')
 };
 
 

@@ -6,9 +6,9 @@ block content
     ul 
       li: a(href="/products/new") Create
       li: a(href=`/products/products.id`) Edit
-      li: a(href="/products/") Delete
+      //- li: a(href="/products/") Delete
   div.card-container 
-    each product in products 
+    each product,id in products 
      .card 
        .card-header 
           .card-picture 
@@ -19,8 +19,9 @@ block content
           p= `Price:   ${product.price} `
           |
           p= product.description 
+          |
           button.btn.btn-primary.btn-card(type='button')
-            a(href=`/products/${product.id}`) Show
+            a(href='/products/'+ product.id) Show
           button.btn.btn-primary.btn-card(type='button')
             a(href=`/products/${product.id}/delete`) Delete
 
