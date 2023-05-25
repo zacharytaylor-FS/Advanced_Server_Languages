@@ -8,6 +8,7 @@ const Products = require('../models/Products')
 const index = (req, res) => {
     const products =  Products.all()
     res.render('views/products/index.pug', {
+        title: 'Home',
         products
     }).json(products)
 };
@@ -25,18 +26,18 @@ const form = (req, res) => {
 };
 const show = (req, res) => {
     const productId = Number(req.params.id)
-    let product = Products.find((r) => r.id === productId)
-    res.render('views/products/show.pug', {product})
+    let product = Products.find((r) => r.id === req.params.id)
+    res.render('views/products/show.pug', {'product': product ,title: 'About', productId})
 };
 const create = (req, res) => {
     const product = Products.create(req.body)
     // res.json(product)
-    res.redirect('/products/' + product.id)
+    res.redirect('/products' )
 };
 const update = (req, res) => {
     const product = Products.update(req.params.id, req.body)
     // res.json(product)
-    res.redirect('/products/' + req.params.id)
+    res.redirect('/products' + product.id)
 
 };
 const remove = (req, res) => {
