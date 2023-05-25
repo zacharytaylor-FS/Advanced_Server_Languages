@@ -3,6 +3,7 @@ let products = [
         id: 1,
         brand:"Apple",
         title:"iPhone 14 Pro",
+        img:"https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6487/6487460_sd.jpg;maxHeight=640;maxWidth=550",
         is_published:true,
         price: 999,
         description: "Brand new 14 Pro"
@@ -12,6 +13,7 @@ let products = [
         id: 2,
         brand:"Apple",
         title:"iPhone 14 Pro Max",
+        img:"https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6487/6487405_sd.jpg;maxHeight=640;maxWidth=550",
         is_published:true,
         price: 1099,
         description: "Brand new 14 Pro Max"
@@ -20,6 +22,7 @@ let products = [
         id: 3,
         brand:"Apple",
         title:"iPhone SE",
+        img: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6487/6487206_sd.jpg;maxHeight=640;maxWidth=550",
         is_published:true,
         price: 429,
         description: "Dependable Go-To for Apple users"
@@ -27,7 +30,8 @@ let products = [
     {
         id: 4,
         title: 'Nike Shoe',
-        price: 29.00,
+        img: "https://images.stockx.com/360/Air-Jordan-1-OG-Chicago-1985/Images/Air-Jordan-1-OG-Chicago-1985/Lv2/img01.jpg?fm=webp&auto=compress&w=576&dpr=2&updated_at=1635283046&h=384&q=60",
+        price: '28,000.00',
         is_published: true,
         description: "Brand new Nike Shoe"
     }
