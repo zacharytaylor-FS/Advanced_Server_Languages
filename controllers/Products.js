@@ -15,9 +15,9 @@ const index = async (req, res) => {
 };
 
 const form = async (req, res) => {
-    const id = (typeof req.params.id !== "undefined") ? Number(req.params.id) : false
+    // const id = (typeof req.params.id !== "undefined") ? Number(req.params.id) : false
 if (req.params.id) {
-    const product = await Product.findByPk(id)
+    const product = await Product.findByPk(req.params.id)
     // res.json(product)
     res.render('views/products/edit.pug', {product})
 } else {
@@ -27,7 +27,6 @@ if (req.params.id) {
 };
 
 const show = async (req, res) => {
-    const productId = Number(req.params.id)
     const product = await Product.findByPk(req.params.id)
     res.render('views/products/show.pug', {product})
 };

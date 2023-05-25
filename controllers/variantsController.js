@@ -14,10 +14,8 @@ const index = async (req, res) => {
 };
 
 const form = async (req, res) => {
-    const id = (typeof req.params.id !== "undefined") ? Number(req.params.id) : false
-    
     if (req.params.id) {
-        const variant = await Variant.findByPk(id)
+        const variant = await Variant.findByPk(req.params.id)
         // res.json(variant)
         res.render('views/variants/edit.pug', {variant})
     } else {

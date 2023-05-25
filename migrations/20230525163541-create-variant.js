@@ -16,8 +16,8 @@ module.exports = {
         type: Sequelize.FLOAT
       },
       productId: {
-        type: Sequelize.INTEGER,
-        allowNull: true
+        allowNull: true,
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

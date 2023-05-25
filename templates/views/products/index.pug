@@ -22,7 +22,7 @@ block content
           p= product.description 
           |
           button.btn.btn-primary.btn-card(type='button')
-            a(href='/products/'+ product.id) Show
+            a(href=`/products/${product.id}/edit`) Edit
           button.btn.btn-primary.btn-card(type='button')
             a(href=`/products/${product.id}/delete`) Delete
 
