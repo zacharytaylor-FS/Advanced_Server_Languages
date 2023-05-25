@@ -8,18 +8,22 @@
 
 ### MVC Design Pattern
 
-1. [Backend API](#backend-api)
+1. [Backend API](#model)
 
-1. [Express Framework] HTTP verb-based routing
+1. [Express Framework](#express) HTTP verb-based routing
 
-[1. Pug Jade] Template Engine
+1. [ Pug Jade]#() Template Engine
 
 1. [Database ] MySQL
 
-1. [Sequelize & Sequelize cli] Abstract Database Layering
+1. [Sequelize & Sequelize cli](#abstract-database-layering)
 
-[Docker] ReactJS
+[Docker](#setup-docker)
 
-## Backend API
+## Express
+
+## Model
 
 ### Setup Docker
+
+### Abstract Database Layering
