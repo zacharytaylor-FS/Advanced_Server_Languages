@@ -1,0 +1,12 @@
+extends ../../layouts/base.pug
+
+block content
+  if variant
+    h3=`Title: ${variant.title}` 
+    p= `ID: ${variant.id}`
+    p= `${variant.description}`
+    div
+      a(href=`/variants/${variant.id}/edit`) Edit
+      a(href=`/variants/${variant.id}/delete`) Delete
+  else 
+    h3= 'Variant Title'

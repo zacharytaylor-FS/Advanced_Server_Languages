@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const productCtrl = require('../controllers/productController')
+const productCtrl = require('../controllers/productsController')
 
 //* CREATE
 router.get('/new', productCtrl.form)
@@ -18,7 +18,7 @@ router.get('/:id/edit', productCtrl.form)
 router.post('/:id', productCtrl.update)
 //* REMOVE W/ ID
 router.delete('/:id', productCtrl.remove)
-router.post('/:id/delete', productCtrl.remove)
+router.get('/:id/delete', productCtrl.remove)
 
 
 module.exports = router

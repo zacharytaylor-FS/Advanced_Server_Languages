@@ -1,0 +1,9 @@
+extends ../../layouts/base.pug
+
+block content
+  if image
+    h3= image.title 
+    p= `ID ${image.id}`
+    p= image.description
+  else 
+    h3= 'Image Title'

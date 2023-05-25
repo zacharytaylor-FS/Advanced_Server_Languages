@@ -1,0 +1,10 @@
+extends ../../layouts/base.pug
+
+block content
+  nav.nav.navbar 
+    a(href="/products") Back
+  article    
+    h1= `URL `+ message
+    h2= `Error Code: `+ error.status
+      p Sorry we have ran into an ERROR
+    pre #{error.stack}

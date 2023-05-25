@@ -3,47 +3,52 @@
  * * ROUTES to call on DB 
  * * require Model
  */
-const Products = require('../models/Products')
+const { Product } = require('../models')
 
-const index = (req, res) => {
-    const products =  Products.all()
+const index = async (req, res) => {
+    const products = await Product.findAll()
     res.render('views/products/index.pug', {
         title: 'Home',
-        products
-    }).json(products)
+        products 
+    })
+    // res.json(products)
 };
 
-const form = (req, res) => {
+const form = async (req, res) => {
     const id = (typeof req.params.id !== "undefined") ? Number(req.params.id) : false
-    if (req.params.id) {
-        const product = Products.find(id)
+if (req.params.id) {
+    const product = await Product.findByPk(id)
     // res.json(product)
-    res.render('views/products/edit.pug', {product, id})
+    res.render('views/products/edit.pug', {product})
 } else {
     res.render('views/products/create.pug')
 
 }
 };
-const show = (req, res) => {
+
+const show = async (req, res) => {
     const productId = Number(req.params.id)
-    let product = Products.find((r) => r.id === req.params.id)
-    res.render('views/products/show.pug', {'product': product ,title: 'About', productId})
+    const product = await Product.findByPk(req.params.id)
+    res.render('views/products/show.pug', {product})
 };
-const create = (req, res) => {
-    const product = Products.create(req.body)
-    // res.json(product)
-    res.redirect('/products' )
+
+const create = async (req, res) => {
+    const product = await Product.create(req.body)
+    res.json(product)
+    // res.redirect('/products/' + product.id)
 };
-const update = (req, res) => {
-    const product = Products.update(req.params.id, req.body)
+const update = async (req, res) => {
+    const product = await Product.update(req.body, {
+        where: { id: req.params.id }
+    })
     // res.json(product)
-    res.redirect('/products' + product.id)
+    res.redirect('/products/' + req.params.id)
 
 };
-const remove = (req, res) => {
-    const product = Products.remove(req.params.id)
+const remove = async (req, res) => {
+    const products = await Product.destroy({where : {id: req.params.id}})
     // res.json(products)
-    res.render('views/products/show.pug')
+    res.redirect('/products')
 };
 
 

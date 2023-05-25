@@ -4,6 +4,8 @@ const morgan = require('morgan');
 require('dotenv').config()
 
 const productsRouter = require('./routes/Products')
+const variantRouter = require('./routes/Variants')
+const imagesRouter = require('./routes/Images')
 
 const app = express();
 
@@ -18,6 +20,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 
 app.use('/products', productsRouter)
+app.use('/variants', variantRouter)
+app.use('/images', imagesRouter)
 
 app.use((req,res, next) => {
     const err = new Error('Sorry, not found')
