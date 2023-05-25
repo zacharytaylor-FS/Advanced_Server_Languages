@@ -1,22 +1,23 @@
 extends ../../../base.pug
 
 block content
-  main.main 
+  main.main
+    h1= title 
+      p Welcome to #{title} 
     h1 All Products 
     ul 
-      li: a(href="/products/new") Create
-      li: a(href=`/products/products.id`) Edit
-      //- li: a(href="/products/") Delete
-  div.card-container 
-    each product,id in products 
+      li: a(href="/products/new") Create New Product
+      li: a(href=`/products/${products.id}`) Edit Product(s)
+      li: a(href="/products/") Delete
+  div.card-container
+    each product in products 
      .card 
        .card-header 
           .card-picture 
             .card-picture-overlay &nbsp;
-            img.card-picture-img(src="images/pug.svg", alt="alt", width='')  
-          h2
-            span= product.title
-          p= `Price:   ${product.price} `
+            img.card-picture-img(src=product.img, alt="alt", width='')  
+          h3(class='card-header')= product.title
+          h4= '$' + product.price
           |
           p= product.description 
           |
