@@ -1,36 +1,43 @@
 block content
-h1 Create a Product
 if !product
+  h1 Create a Product
   form(action="/products" method="POST")
-    input#date(name="id", type="text")
+    input(name="id", type="text", hidden="true")
     fieldset.form-group 
       label(for="title")  Title: 
       input.form-control(name="title", type="text", value='')
     fieldset.form-group 
-      label(for="brand")  Brand: 
-      input.form-control(name="brand", type="text", value='brand')
+      label(for="brand")  Slug: 
+      input.form-control(name="brand", type="text", value='')
     fieldset.form-group 
       label(for="price")  Price: 
-      input.form-control(name="price", type="text", value='price')
+      input.form-control(name="price", type="text", value='')
     fieldset.form-group 
       label(for="description")  Description: 
-      textarea(name="description", type="text", value='description', cols='30', rows='5')
+      textarea(name="description", type="text", value='description', cols='20', rows='5')
+    fieldset.form-group 
+      label(for="is_published")  Published: 
+      input.form-control(name="is_published", type="checkbox")
     button(type="submit") Save  
 else
+  h1 Edit #{product.title}
   form(action="/products/" + product.id method="POST")
-    input#date(name="id", type="text")
+    input(name="id", type="text", hidden="true", value=product.id)
     fieldset.form-group 
       label(for="title")  Title: 
       input.form-control(name="title", type="text", value=product.title)
     fieldset.form-group 
-      label(for="brand")  Brand: 
-      input.form-control(name="brand", type="text", value=product.brand)
+      label(for="brand")  Slug: 
+      input.form-control(name="brand", type="text", value=product.slug)
     fieldset.form-group 
       label(for="price")  Price: 
       input.form-control(name="price", type="text", value=product.price)
     fieldset.form-group 
       label(for="description")  Description: 
-      input(name="description", type="text", value=product.description, cols='30', rows='5')
+      input(name="description", type="text", value=product.description, cols='20', rows='5')
+    fieldset.form-group 
+      label(for="is_published")  Published: 
+      input.form-control(name="is_published", type="checkbox", value=product.is_published, checked)
     button(type="submit") Save 
   //- form(action='#' method="post") 
   //-     .form-group

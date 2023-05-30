@@ -18,11 +18,9 @@ app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.get('/', (req,res) => {
-    res.render('views/home')
+app.get('/', (req,res,next) => {
+    res.render('views/home.pug')
 })
-
-
 app.use('/products', productsRouter)
 app.use('/variants', variantRouter)
 app.use('/images', imagesRouter)
@@ -41,7 +39,7 @@ app.use((err, req, res, next) => {
 
     //* render error page
     res.status(err.status || 500)
-    render('views/products/error', {
+    render('views/products/error.pug', {
         err
     })
 })

@@ -8,7 +8,7 @@ const { Product } = require('../models')
 const index = async (req, res) => {
     const products = await Product.findAll()
     // res.render('views/products/index.pug', {
-    //     title: 'Home',
+    //     title: 'Products Page',
     //     products
     // })
     res.json(products)
@@ -31,8 +31,9 @@ const show = async (req, res) => {
 };
 
 const create = async (req, res) => {
-    const product = await Product.create(req.body)
-    res.redirect('/products/' + product.id)
+    // const product = await Product.create(req.body)
+    // res.redirect('/products/' + product.id)
+    const product = Product.create(req.body)
     res.json(product)
 };
 
