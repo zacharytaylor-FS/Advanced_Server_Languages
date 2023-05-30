@@ -1,4 +1,4 @@
-extends ../../../base.pug
+extends ../../layouts/base.pug
 
 block content
   main.main
@@ -7,24 +7,23 @@ block content
     h1 All images 
     ul 
       li: a(href="/images/new") Create New Product
-      li: a(href=`/images/${images.id}`) Edit Product(s)
       li: a(href="/images/") Delete
-  div.card-container
-    each image in images 
-     .card 
-       .card-header 
-          .card-picture 
-            .card-picture-overlay &nbsp;
-            img.card-picture-img(src=image.img, alt="alt", width='')  
-          h3(class='card-header')= image.title
-          h4= '$' + image.price
-          |
-          p= image.description 
-          |
-          button.btn.btn-primary.btn-card(type='button')
-            a(href='/images/'+ image.id) Show
-          button.btn.btn-primary.btn-card(type='button')
-            a(href=`/images/${image.id}/delete`) Delete
+  //- div.card-container
+  //-   each image in images 
+  //-    .card 
+  //-      .card-header 
+  //-         .card-picture 
+  //-           .card-picture-overlay &nbsp;
+  //-           img.card-picture-img(src=image.img, alt="alt", width='')  
+  //-         h3(class='card-header')= image.title
+  //-         h4= '$' + image.price
+  //-         |
+  //-         p= image.description 
+  //-         |
+  //-         button.btn.btn-primary.btn-card(type='button')
+  //-           a(href='/images/'+ image.id) Show
+  //-         button.btn.btn-primary.btn-card(type='button')
+  //-           a(href=`/images/${image.id}/delete`) Delete
 
 
 

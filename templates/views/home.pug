@@ -1,13 +1,19 @@
-extends ../layouts/base
+extends ../layouts/base.pug
 
-block content 
-
-h1 Manage   
-  nav 
-    ul 
-      li 
-        a(href="/variants") Variants 
-      li 
-        a(href="/products") Products 
-      li 
-        a(href="/images") Images 
+block content
+  main.main 
+    h1 Welcome to the #{title} page.
+    h3 A Content Management System 
+    p Using Express.js, Sequelize, MySQL   
+      ul
+        li 
+          a(href="http://localhost:8080/") Home
+          | Home  
+        li 
+          a(href="/variants") Variants 
+        li 
+          a(href="/variants") Variants 
+        li 
+          a(href="/products") Products 
+        li 
+          a(href="/images") Images 

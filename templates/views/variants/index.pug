@@ -1,4 +1,4 @@
-extends ../../../base.pug
+extends ../../layouts/base.pug
 
 block content
   main.main
@@ -7,24 +7,23 @@ block content
     h1 All variants 
     ul 
       li: a(href="/variants/new") Create New variant
-      li: a(href=`/variants/${variants.id}`) Edit variant(s)
       li: a(href="/variants/") Delete
-  div.card-container
-    each variant in variants 
-     .card 
-       .card-header 
-          .card-picture 
-            .card-picture-overlay &nbsp;
-            img.card-picture-img(src=variant.img, alt="alt", width='')  
-          h3(class='card-header')= variant.title
-          h4= '$' + variant.price
-          |
-          p= variant.description 
-          |
-          button.btn.btn-primary.btn-card(type='button')
-            a(href=`/variants/${variant.id}/edit`) Edit
-          button.btn.btn-primary.btn-card(type='button')
-            a(href=`/products/${variant.id}/delete`) Delete
+  //- div.card-container
+  //-   each variant in variants 
+  //-    .card 
+  //-      .card-header 
+  //-         .card-picture 
+  //-           .card-picture-overlay &nbsp;
+  //-           img.card-picture-img(src=variant.img, alt="alt", width='')  
+  //-         h3(class='card-header')= variant.title
+  //-         h4= '$' + variant.price
+  //-         |
+  //-         p= variant.description 
+  //-         |
+  //-         button.btn.btn-primary.btn-card(type='button')
+  //-           a(href=`/variants/${variant.id}/edit`) Edit
+  //-         button.btn.btn-primary.btn-card(type='button')
+  //-           a(href=`/products/${variant.id}/delete`) Delete
 
 
 
