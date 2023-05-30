@@ -3,23 +3,24 @@
  * * ROUTES to call on DB 
  * * require Model
 */
-const { Variant } = require('../models')
+const { Variant, Product } = require('../models')
 
 const index = async (req, res) => {
-    const variants = await Variant.findAll()
+    // const variants = await Variant.findAll()
     res.render('views/variants/index.pug', {
-        title: 'Home',
-        variants, 
+        title: 'Variants Home',
+        // variants, 
     })
 };
 
 const form = async (req, res) => {
+    // const products = await Product.findAll()
     if (req.params.id) {
         const variant = await Variant.findByPk(req.params.id)
         // res.json(variant)
-        res.render('views/variants/edit.pug', {variant})
+        res.render('views/variants/edit.pug', {variant, products})
     } else {
-        res.render('views/variants/create.pug')
+        res.render('views/variants/create.pug', {})
     }
 };
 
@@ -29,9 +30,9 @@ const show = async (req, res) => {
 };
 
 const create = async (req, res) => {
-    const variant = await Variant.create(req.body)
-    res.json(variant)
-    // res.redirect('/variants/' + variant.id)
+    // const variant = await Variant.create(req.body)
+    // res.json(variant)
+    res.redirect('/variants/new')
 };
 
 

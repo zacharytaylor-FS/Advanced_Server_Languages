@@ -1,13 +1,14 @@
-extends ../layouts/base
+extends ../layouts/base.pug
 
-block content 
-
-h1 Manage   
-  nav 
-    ul 
-      li 
-        a(href="/variants") Variants 
-      li 
-        a(href="/products") Products 
-      li 
-        a(href="/images") Images 
+block content
+  main
+    h1 Manage Content System
+    p OCR Sequelize   
+      nav 
+        ul 
+          li 
+            a(href="/variants") Variants 
+          li 
+            a(href="/products") Products 
+          li 
+            a(href="/images") Images 

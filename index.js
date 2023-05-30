@@ -1,4 +1,5 @@
 const express = require('express');
+const app = express();
 const path = require('path');
 const morgan = require('morgan');
 require('dotenv').config()
@@ -7,7 +8,6 @@ const productsRouter = require('./routes/Products')
 const variantRouter = require('./routes/Variants')
 const imagesRouter = require('./routes/Images')
 
-const app = express();
 
 //* View engine setup
 app.set('views', path.join(__dirname + '/templates'))
@@ -19,7 +19,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', (req,res) => {
-    res.render('views/home')
+    res.render('views/home.pug')
 })
 
 
@@ -41,9 +41,7 @@ app.use((err, req, res, next) => {
 
     //* render error page
     res.status(err.status || 500)
-    render('views/products/error', {
-        err
-    })
+    res.send("Error"+ err.status + err.message)
 })
 
 app.listen(process.env.PORT, () => {

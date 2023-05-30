@@ -6,19 +6,18 @@
 const { Product } = require('../models')
 
 const index = async (req, res) => {
-    const products = await Product.findAll()
-    // res.render('views/products/index.pug', {
-    //     title: 'Home',
-    //     products
-    // })
-    res.json(products)
+    // const products = await Product.findAll()
+    res.render('views/products/index.pug', {
+        title: 'Home',
+        // products
+    })
 };
 
 const form = async (req, res) => {
     if (req.params.id) {
-        const product = await Product.findByPk(req.params.id)
+        // const product = await Product.findByPk(req.params.id)
         // res.json(product)
-        res.render('views/products/edit.pug', {product})
+        res.render('views/products/edit.pug', {})
     } else {
         res.render('views/products/create.pug')
 
@@ -31,9 +30,8 @@ const show = async (req, res) => {
 };
 
 const create = async (req, res) => {
-    const product = await Product.create(req.body)
-    res.redirect('/products/' + product.id)
-    res.json(product)
+    // const product = await Product.create(req.body)
+    res.redirect('/products/new') 
 };
 
 

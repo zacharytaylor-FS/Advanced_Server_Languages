@@ -1,11 +1,12 @@
 extends ../../layouts/base.pug
 
 block content
-h4
-  li: a(href="/products/new") Create New Product
-    if products
-      h3= products.title 
-      p= `Product Id ${product.id}`
-      p= product.description
-    else 
-      h3= 'Product Title'
+h1 About Product
+  h4
+    li: a(href="/products/new") Create New Product
+    //- if products
+    //-   h3= products.title 
+    //-   p= `Product Id ${product.id}`
+    //-   p= product.description
+    //- else 
+    //-   h3 'Product Title'
