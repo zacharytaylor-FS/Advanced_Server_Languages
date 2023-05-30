@@ -61,6 +61,31 @@ li {
     display: flex;
 }
 
+form {
+    max-width: 350px;
+    font-size: 1.2rem;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    margin-bottom: .3rem;
+}
+
+.form-group input, textarea{
+    height: auto;
+    margin-top: .3rem;
+    width: 60%;
+}
+
 .card-container {
     display: flex;
     flex-flow: row wrap;
@@ -75,18 +100,18 @@ li {
     flex-wrap: wrap;
     max-width: 350px;
     margin: 1.5rem 0 2.5em 0;
-    padding: 16px;
     color: black;
     transition: 0.3s;
 }
 
 .card:hover{
     box-shadow: 0 4px 28px 0 rgba(255,255,255, 0.2);
-
+    
 }
 
 .card-header {
     flex: 1 0 140px;
+    padding: 16px;
 }
 
 .card-picture img {
