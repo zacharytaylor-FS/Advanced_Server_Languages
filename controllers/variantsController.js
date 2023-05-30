@@ -6,10 +6,10 @@
 const { Variant } = require('../models')
 
 const index = async (req, res) => {
-    const variants = await Variant.findAll()
+    // const variants = await Variant.findAll()
     res.render('views/variants/index.pug', {
         title: 'Home',
-        variants, 
+        // variants, 
     })
 };
 

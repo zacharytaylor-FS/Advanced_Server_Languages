@@ -6,12 +6,12 @@
 const { Image } = require('../models')
 
 const index = async (req, res) => {
-    const images = await Image.findAll()
+    // const images = await Image.findAll()
     res.render('views/images/index.pug', {
-        title: 'Home',
-        images 
+        title: 'Images Home',
+        // images 
     })
-    res.json(images)
+    // res.json(images)
 };
 
 const form = async (req, res) => {
