@@ -1,4 +1,4 @@
-extends ../../layouts/base.pug
+extends ../../../base.pug
 
 block content
   main.main
@@ -20,6 +20,7 @@ block content
           h4= '$' + product.price
           |
           p= product.description 
+          |
           button.btn.btn-primary.btn-card(type='button')
             a(href=`/products/${product.id}/edit`) Edit
           button.btn.btn-primary.btn-card(type='button')

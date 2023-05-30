@@ -1,0 +1,14 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=, initial-scale=1.0")
+    title #{title}
+    link(src="https://kit.fontawesome.com/afc2c54677.js" crossorigin="anonymous") 
+    link(type='text/css' href='/css/style.css' rel='stylesheet')
+body
+div#root
+  include ../partials/_nav.pug
+  block content
+  include ../partials/_footer.pug
