@@ -2,7 +2,6 @@ extends ../../layouts/base.pug
 
 block content
   main.main
-    h1= title 
     p Welcome to #{title} 
     h1 All Products 
     ul 
@@ -15,6 +14,7 @@ block content
             .card-picture-overlay &nbsp;
             img.card-picture-img(src=product.img, alt="alt", width='')  
           h3(class='card-header')= product.title
+          a(href="/products/")= product.slug 
           h4= '$' + product.price
           |
           p= product.description 

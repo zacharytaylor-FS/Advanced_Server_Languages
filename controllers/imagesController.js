@@ -34,8 +34,8 @@ const show = async (req, res) => {
 
 const create = async (req, res) => {
     const image = await Image.create(req.body)
-    res.json(image)
-    // res.redirect('/images/' + image.id)
+    // res.json(image)
+    res.redirect('/images/' + image.id)
 };
 
 

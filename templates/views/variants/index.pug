@@ -6,24 +6,24 @@ block content
       p Welcome to #{title} 
     h1 All variants 
     ul 
-      li: a(href="/variants/new") Create New variant
-      li: a(href="/variants/") Delete
-  //- div.card-container
-  //-   each variant in variants 
-  //-    .card 
-  //-      .card-header 
-  //-         .card-picture 
-  //-           .card-picture-overlay &nbsp;
-  //-           img.card-picture-img(src=variant.img, alt="alt", width='')  
-  //-         h3(class='card-header')= variant.title
-  //-         h4= '$' + variant.price
-  //-         |
-  //-         p= variant.description 
-  //-         |
-  //-         button.btn.btn-primary.btn-card(type='button')
-  //-           a(href=`/variants/${variant.id}/edit`) Edit
-  //-         button.btn.btn-primary.btn-card(type='button')
-  //-           a(href=`/products/${variant.id}/delete`) Delete
+      li: a(href="/variants/new") Add new Variant
+    div.card-container
+      if variant
+      .card 
+        .card-header 
+            .card-picture 
+              .card-picture-overlay &nbsp;
+              img.card-picture-img(src=variant.img, alt="alt", width='')  
+            h3(class='card-header')= variant.title
+            h4= '$' + variant.price
+            |
+            p= variant.productId 
+            |
+            p= product.title
+            button.btn.btn-primary.btn-card(type='button')
+              a(href=`/variants/${variant.id}/edit`) Edit
+            button.btn.btn-primary.btn-card(type='button')
+              a(href=`/products/${variant.id}/delete`) Delete
 
 
 

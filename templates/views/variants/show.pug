@@ -4,9 +4,11 @@ block content
   if variant
     h3=`Title: ${variant.title}` 
     p= `ID: ${variant.id}`
-    p= `${variant.description}`
+    p= `${variant.price}`
+    p= `Product: ${product.title}`
     div
       a(href=`/variants/${variant.id}/edit`) Edit
       a(href=`/variants/${variant.id}/delete`) Delete
   else 
-    h3= 'Variant Title'
+    h3 'Variant Title'
+    a(href="/variants/new") Create Variant

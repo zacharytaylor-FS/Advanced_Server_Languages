@@ -19,7 +19,9 @@ app.use(express.urlencoded({extended: false}))
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', (req,res,next) => {
-    res.render('views/home.pug')
+    res.render('views/home.pug', {
+        title: "Home"
+    })
 })
 app.use('/products', productsRouter)
 app.use('/variants', variantRouter)
@@ -39,7 +41,7 @@ app.use((err, req, res, next) => {
 
     //* render error page
     res.status(err.status || 500)
-    render('views/products/error.pug', {
+    render('layouts/error.pug', {
         err
     })
 })

@@ -5,13 +5,19 @@
 */
 const { Product } = require('../models')
 
-const index = async (req, res) => {
+const index = async (req, res, next) => {
     const products = await Product.findAll()
+    console.log(products)
+    if (products === null) {
+        const err = new Error("Product not found")
+        err.status = 404;
+        return next(err)
+    }
+    // res.json(products)
     res.render('views/products/index.pug', {
         title: 'Products Page',
         products
     })
-    // res.json(products)
 };
 
 const form = async (req, res) => {
@@ -30,10 +36,9 @@ const show = async (req, res) => {
 };
 
 const create = async (req, res) => {
-    // const product = await Product.create(req.body)
-    // res.redirect('/products/' + product.id)
     const product = await Product.create(req.body)
-    res.json(product)
+    res.redirect('/products/' + product.id)
+    // res.json(product)
 };
 
 

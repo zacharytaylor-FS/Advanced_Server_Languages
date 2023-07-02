@@ -3,35 +3,37 @@
  * * ROUTES to call on DB 
  * * require Model
 */
-const { Variant } = require('../models')
+const { Variant, Product } = require('../models')
 
 const index = async (req, res) => {
-    // const variants = await Variant.findAll()
+    const variants = await Variant.findAll()
     res.render('views/variants/index.pug', {
-        title: 'Home',
-        // variants, 
+        title: 'Variant Index Page',
+        variants, 
     })
 };
 
 const form = async (req, res) => {
+    const products = Product.findAll()
     if (req.params.id) {
         const variant = await Variant.findByPk(req.params.id)
         // res.json(variant)
-        res.render('views/variants/edit.pug', {variant})
+        res.render('views/variants/edit.pug', {variant, products})
     } else {
-        res.render('views/variants/create.pug')
+        res.render('views/variants/create.pug', {products})
     }
 };
 
 const show = async (req, res) => {
     const variant = await Variant.findByPk(req.params.id)
-    res.render('views/variants/show.pug', {variant})
+    const product = await variant.getProduct()
+    res.render('views/variants/show.pug', {variant, product})
 };
 
 const create = async (req, res) => {
     const variant = await Variant.create(req.body)
-    res.json(variant)
-    // res.redirect('/variants/' + variant.id)
+    // res.json(variant)
+    res.redirect('/variants/' + variant.id)
 };
 
 

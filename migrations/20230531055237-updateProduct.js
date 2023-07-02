@@ -24,7 +24,9 @@ module.exports = {
      * await queryInterface.dropTable('users');
      */
     await queryInterface.changeColumn('Products', 'price', {
-      type: Sequelize.FLOAT
+      type: Sequelize.INTEGER,
+      defaultValue: 0,
+      allowNull: false
     })
   }
 };

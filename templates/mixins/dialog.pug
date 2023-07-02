@@ -1,0 +1,17 @@
+
+mixin model
+  .model 
+    h1 Message Whhooop 
+    p description 
+    button(disabled) 
+
+mixin model-title(title)
+  .model 
+    h1= title
+    button(disabled) 
+
+mixin model-title(title, desc)
+  .model 
+    h1= title
+    p= desc
+    button(disabled) 

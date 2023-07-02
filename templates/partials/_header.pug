@@ -3,17 +3,22 @@ header
     a.navbar-brand(href="/")
       img.card-picture-img(src="/images/pug.svg", alt="alt", width=64)
       span Pug EM
+  form(action="#" method="method")
+    label(for="search") 
+    input#form-controls(name="search", type="search", placeholder="Search...", autofocus=true)
+  button.btn.btn-primary(type='button', aria-controls='navbar', aria-expanded='false')
+    span /
   nav 
   .container 
     .navbar-left 
-      button.btn.btn-primary(type='button', aria-controls='navbar', aria-expanded='false')
-        span Toggle Navigation
-    form(action="#" method="method")
-    label(for="search") 
-    input#form-controls(name="search", type="search", placeholder="Search...", autofocus=true)
     nav#navbar.navbar-menu  
       ul.nav.navbar 
         link(class=(title == 'home') ? 'active' :null)/ 
         a(href="/") Home
         link(class=(title == 'index') ? 'active' :null)/
         a(href="/products") Products 
+        link(class=(title == 'index') ? 'active' :null)/
+        a(href="/variants") Variants 
+        link(class=(title == 'index') ? 'active' :null)/
+        a(href="/images") Images 
+        

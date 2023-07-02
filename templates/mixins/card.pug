@@ -1,0 +1,17 @@
+//- mixin products(products)
+//-   div.products
+//-     each product in products 
+//-       .card 
+//-        .card-header 
+//-           .card-picture 
+//-             .card-picture-overlay &nbsp;
+//-             img.card-picture-img(src=product.img, alt="alt", width='')  
+//-           h3(class='card-header')= product.title
+//-           h4= '$' + product.price
+//-           |
+//-           p= product.description 
+//-           |
+//-           button.btn.btn-primary.btn-card(type='button')
+//-             a(href=`/products/${product.id}/edit`) Edit
+//-           button.btn.btn-primary.btn-card(type='button')
+//-             a(href=`/products/${product.id}/delete`) Delete 

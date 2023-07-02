@@ -1,9 +1,10 @@
 extends ../../layouts/base.pug
-
+include ../../mixins/dialog.pug
 block content
   main.main
     h1= title 
       p Welcome to #{title} 
+      +dialog
     h1 All images 
     ul 
       li: a(href="/images/new") Add New Image

@@ -8,7 +8,10 @@ html(lang='en')
     link(src="https://kit.fontawesome.com/afc2c54677.js" crossorigin="anonymous") 
     link(type='text/css' href='/css/style.css' rel='stylesheet')
 body
-div#root
-  include ../partials/_nav.pug
-  block content
-  include ../partials/_footer.pug
+  div#root
+    include ../partials/_nav.pug
+    block content
+      h1= err.message 
+      h3= err.status 
+      p= err.stack
+    include ../partials/_footer.pug

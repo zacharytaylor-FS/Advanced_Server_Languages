@@ -1,22 +1,22 @@
 block content
-if !image
-  div
-    h1 Create a image
-    form(action="/images" method="POST")
-      input#date(name="id", type="text", hidden="true")
-      fieldset.form-group 
-        label(for="image")  Image: 
-        input.form-control(name="image", type="text", value='')
-      button(type="submit") Add Image  
-else
-  div 
-    h1 Edit #{image}
-    form(action="/images/" + image.id method="POST")
-      input#date(name="id", type="text", hidden="true")
-      fieldset.form-group 
-        label(for="title")  Title: 
-        input.form-control(name="title", type="text", value=image.title)
-      button(type="submit") Update Image 
+  if !image
+    div
+      h1 Create a image
+      form(action="/images" method="POST")
+        input#date(name="id", type="text", hidden="true")
+        fieldset.form-group 
+          label(for="image")  Image: 
+          input.form-control(name="image", type="text", value='')
+        button(type="submit") Add Image  
+  else
+    div 
+      h1 Edit #{image}
+      form(action="/images/" + image.id method="POST")
+        input#date(name="id", type="text", hidden="true")
+        fieldset.form-group 
+          label(for="title")  Title: 
+          input.form-control(name="title", type="text", value=image.title)
+        button(type="submit") Update Image 
   //- form(action='#' method="post") 
   //-     .form-group
   //-         label(for=product[title]) Title

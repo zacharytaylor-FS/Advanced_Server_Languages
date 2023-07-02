@@ -1,7 +1,9 @@
 extends ../../layouts/base.pug
+include ../../mixins/dialog.pug
 
 block content
   if !image
+    +dialog()
     h3 'Image Title'
   else 
     h3= image.title 
